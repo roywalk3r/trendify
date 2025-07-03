@@ -76,8 +76,8 @@ export default function Hero() {
                         <HeroItem
                             image={"/images/hero2.jpg"}
                             title={"Elevate Your Style"}
-                            text={"Discover the latest trends and timeless classics in fashion."}
-                            cta={"shop now"}
+                            text={"Discover premium fashion that defines your unique personality"}
+                            cta={"Explore Collection"}
                             position={"items-left"}
                         />
                     </SwiperSlide>
@@ -85,17 +85,17 @@ export default function Hero() {
                         <HeroItem
                             image={"/images/heroImg1.png"}
                             title={"Trending Now"}
-                            text={"Discover the latest trends and timeless classics in fashion."}
-                            cta={"shop now"}
+                            text={"Stay ahead with the latest fashion trends and exclusive pieces"}
+                            cta={"Shop Trends"}
                             position="items-left"
                         />
                     </SwiperSlide>
                     <SwiperSlide>
                         <HeroItem
                             image={"/images/hero3.jpg"}
-                            title={"Latest In Town"}
-                            text={"Discover the latest trends and timeless classics in fashion."}
-                            cta={"shop now"}
+                            title={"New Arrivals"}
+                            text={"Fresh styles just landed - be the first to wear them"}
+                            cta={"See What's New"}
                         />
                     </SwiperSlide>
                 </Swiper>
