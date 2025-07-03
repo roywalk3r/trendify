@@ -1,39 +1,327 @@
-import Image from "next/image";
-import {Input} from "@/components/ui/input";
-import {HeartIcon, SearchIcon, ShoppingBag} from "lucide-react";
+"use client"
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import type { Variants } from "framer-motion"
+import Image from "next/image"
+import { Input } from "@/components/ui/input"
+import { HeartIcon, SearchIcon, ShoppingBag, Menu, X } from "lucide-react"
 
 export default function NavBar() {
-    
+    const [isScrolled, setIsScrolled] = useState(false)
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const [isSearchOpen, setIsSearchOpen] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 10)
+        }
+        window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
+
+    const navVariants: Variants = {
+        hidden: { y: -100, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut",
+                staggerChildren: 0.1,
+            },
+        },
+    }
+
+    const itemVariants: Variants = {
+        hidden: { y: -20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: { duration: 0.4 },
+        },
+    }
+
+    const mobileMenuVariants: Variants = {
+        hidden: {
+            opacity: 0,
+            height: 0,
+            transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+            },
+        },
+        visible: {
+            opacity: 1,
+            height: "auto",
+            transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+                staggerChildren: 0.1,
+                delayChildren: 0.1,
+            },
+        },
+    }
+
+    const mobileItemVariants: Variants = {
+        hidden: { x: -20, opacity: 0 },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: { duration: 0.3 },
+        },
+    }
+
+    const searchVariants: Variants = {
+        hidden: { width: 0, opacity: 0 },
+        visible: {
+            width: "auto",
+            opacity: 1,
+            transition: { duration: 0.3, ease: "easeOut" },
+        },
+    }
+
+    const navItems = [
+        { name: "New Arrivals", href: "#" },
+        { name: "Men", href: "#" },
+        { name: "Women", href: "#" },
+        { name: "Accessories", href: "#" },
+        { name: "Sale", href: "#" },
+    ]
+
     return (
-        <>
-            <header className={"flex items-center p-2 sticky justify-between w-full border-b"}>
-                <div className={"flex gap-1 items-center"}>
-                    <Image src={"/images/logo.svg"} className={"dark:invert"} width={20} height={100}  alt={"Logo"} />
-                    <h1 className={"typography text-2xl capitalize"}>Trendify</h1>
-                </div>
-            <nav className={"flex gap-3 items-center"}>
-                <ul className={"flex gap-3"}>
-                    <li><a href="#" className={"typography"}>New Arrivals</a></li>
-                    <li><a href="#" className={"typography"}>Men</a></li>
-                    <li><a href="#" className={"typography"}>Women</a></li>
-                    <li><a href="#" className={"typography"}>Accessories</a></li>
-                    <li><a href="#" className={"typography"}>Sale</a></li>
+        <motion.header
+            className={`flex items-center justify-between w-full sticky top-0 z-50 transition-all duration-300 ${
+                isScrolled
+                    ? "bg-background/95 backdrop-blur-md border-b shadow-sm py-2 px-4"
+                    : "bg-background border-b py-4 px-4"
+            }`}
+            initial="hidden"
+            animate="visible"
+            variants={navVariants}
+        >
+            {/* Logo */}
+            <motion.div className="flex gap-2 items-center" variants={itemVariants}>
+                <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}>
+                    <Image src={"/images/logo.svg"} className={"dark:invert"} width={24} height={24} alt={"Logo"} />
+                </motion.div>
+                <motion.h1
+                    className={"typography text-xl md:text-2xl capitalize"}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                >
+                    Trendify
+                </motion.h1>
+            </motion.div>
+
+            {/* Desktop Navigation */}
+            <motion.nav className={"hidden lg:flex gap-6 items-center"} variants={itemVariants}>
+                <ul className={"flex gap-6"}>
+                    {navItems.map((item, index) => (
+                        <motion.li
+                            key={item.name}
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.1 + 0.3 }}
+                            whileHover={{ y: -2 }}
+                        >
+                            <motion.a
+                                href={item.href}
+                                className={"typography text-sm font-medium hover:text-ascent transition-colors relative"}
+                                whileHover={{ scale: 1.05 }}
+                            >
+                                {item.name}
+                                <motion.div
+                                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-ascent"
+                                    whileHover={{ width: "100%" }}
+                                    transition={{ duration: 0.2 }}
+                                />
+                            </motion.a>
+                        </motion.li>
+                    ))}
                 </ul>
-            </nav>
-                <div className={"flex gap-3 items-center"}>
-                <div className={"bg-[#F5F0F0] flex  items-center rounded-3xl justify-around "}>
-                    <SearchIcon className={"text-[#8A6163] ml-1 shrink-0"}/>
-                    <Input type={"search"} placeholder={"Search"}  className={"placeholder:text-ascent border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"}/>
-                </div>
-                <div className={"flex gap-3 items-center"}>
-                  <HeartIcon className={" bg-[#F5F0F0]]"}/>
-                    <ShoppingBag className={"text-[#8A6163] shrink-0 bg-[#F5F0F0] rounded-full p-4"}/>
-                    <div >
-                        <Image src={"/images/avatar.png"} className={"dark:invert"} width={37} height={37}  alt={"Logo"} />
-                    </div>
-                </div>
-                </div>
-            </header>
-        </>
-    );
+            </motion.nav>
+
+            {/* Desktop Actions */}
+            <motion.div className={"hidden md:flex gap-3 items-center"} variants={itemVariants}>
+                {/* Search */}
+                <motion.div
+                    className={"bg-[#F5F0F0] flex items-center rounded-3xl overflow-hidden"}
+                    whileHover={{ scale: 1.02 }}
+                    layout
+                >
+                    <motion.button
+                        className="p-2"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={() => setIsSearchOpen(!isSearchOpen)}
+                    >
+                        <SearchIcon className={"text-[#8A6163] w-5 h-5"} />
+                    </motion.button>
+                    <AnimatePresence>
+                        {isSearchOpen && (
+                            <motion.div variants={searchVariants} initial="hidden" animate="visible" exit="hidden">
+                                <Input
+                                    type={"search"}
+                                    placeholder={"Search"}
+                                    className={
+                                        "placeholder:text-ascent border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 w-48"
+                                    }
+                                />
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </motion.div>
+
+                {/* Action Icons */}
+                <motion.div className={"flex gap-3 items-center"}>
+                    <motion.button
+                        whileHover={{ scale: 1.1, y: -2 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="p-2 rounded-full hover:bg-[#F5F0F0] transition-colors"
+                    >
+                        <HeartIcon className={"text-[#8A6163] w-5 h-5"} />
+                    </motion.button>
+                    <motion.button
+                        whileHover={{ scale: 1.1, y: -2 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="p-2 rounded-full hover:bg-[#F5F0F0] transition-colors"
+                    >
+                        <ShoppingBag className={"text-[#8A6163] w-5 h-5"} />
+                    </motion.button>
+                    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="cursor-pointer">
+                        <Image
+                            src={"/images/avatar.png"}
+                            className={"dark:invert rounded-full"}
+                            width={32}
+                            height={32}
+                            alt={"Avatar"}
+                        />
+                    </motion.div>
+                </motion.div>
+            </motion.div>
+
+            {/* Mobile Actions */}
+            <motion.div className={"flex md:hidden gap-2 items-center"} variants={itemVariants}>
+                <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="p-2 rounded-full hover:bg-[#F5F0F0] transition-colors"
+                >
+                    <SearchIcon className={"text-[#8A6163] w-5 h-5"} />
+                </motion.button>
+                <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="p-2 rounded-full hover:bg-[#F5F0F0] transition-colors"
+                >
+                    <ShoppingBag className={"text-[#8A6163] w-5 h-5"} />
+                </motion.button>
+                <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    className="p-2 rounded-full hover:bg-[#F5F0F0] transition-colors lg:hidden"
+                >
+                    <AnimatePresence mode="wait">
+                        {isMobileMenuOpen ? (
+                            <motion.div
+                                key="close"
+                                initial={{ rotate: -90, opacity: 0 }}
+                                animate={{ rotate: 0, opacity: 1 }}
+                                exit={{ rotate: 90, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <X className={"text-[#8A6163] w-5 h-5"} />
+                            </motion.div>
+                        ) : (
+                            <motion.div
+                                key="menu"
+                                initial={{ rotate: 90, opacity: 0 }}
+                                animate={{ rotate: 0, opacity: 1 }}
+                                exit={{ rotate: -90, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <Menu className={"text-[#8A6163] w-5 h-5"} />
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </motion.button>
+            </motion.div>
+
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        className="absolute top-full left-0 w-full bg-background border-b shadow-lg lg:hidden"
+                        variants={mobileMenuVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                    >
+                        <div className="p-4 space-y-4">
+                            {/* Mobile Search */}
+                            <motion.div className="bg-[#F5F0F0] flex items-center rounded-3xl p-2" variants={mobileItemVariants}>
+                                <SearchIcon className={"text-[#8A6163] w-5 h-5 mr-2"} />
+                                <Input
+                                    type={"search"}
+                                    placeholder={"Search"}
+                                    className={
+                                        "placeholder:text-ascent border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+                                    }
+                                />
+                            </motion.div>
+
+                            {/* Mobile Navigation */}
+                            <motion.nav variants={mobileItemVariants}>
+                                <ul className="space-y-3">
+                                    {navItems.map((item, index) => (
+                                        <motion.li key={item.name} variants={mobileItemVariants} whileHover={{ x: 5 }}>
+                                            <a
+                                                href={item.href}
+                                                className="typography text-base font-medium hover:text-ascent transition-colors block py-2"
+                                                onClick={() => setIsMobileMenuOpen(false)}
+                                            >
+                                                {item.name}
+                                            </a>
+                                        </motion.li>
+                                    ))}
+                                </ul>
+                            </motion.nav>
+
+                            {/* Mobile User Actions */}
+                            <motion.div className="flex items-center justify-between pt-4 border-t" variants={mobileItemVariants}>
+                                <div className="flex gap-4">
+                                    <motion.button
+                                        whileHover={{ scale: 1.1 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        className="flex items-center gap-2 text-sm typography"
+                                    >
+                                        <HeartIcon className={"text-[#8A6163] w-4 h-4"} />
+                                        Wishlist
+                                    </motion.button>
+                                    <motion.button
+                                        whileHover={{ scale: 1.1 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        className="flex items-center gap-2 text-sm typography"
+                                    >
+                                        <ShoppingBag className={"text-[#8A6163] w-4 h-4"} />
+                                        Cart
+                                    </motion.button>
+                                </div>
+                                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                                    <Image
+                                        src={"/images/avatar.png"}
+                                        className={"dark:invert rounded-full"}
+                                        width={28}
+                                        height={28}
+                                        alt={"Avatar"}
+                                    />
+                                </motion.div>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.header>
+    )
 }

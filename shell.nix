@@ -1,7 +1,10 @@
 # To learn more about how to use Nix to configure your environment
 # see: https://developers.google.com/idx/guides/customize-idx-env
-{pkgs}: {
-  # Which nixpkgs channel to use.
+let
+  nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixos-24.05";
+  pkgs = import nixpkgs { config = {}; overlays = []; };
+in
+pkgs.mkShellNoCC {  # Which nixpkgs channel to use.
   channel = "stable-24.05"; # or "unstable"
   # Use https://search.nixos.org/packages to find packages
   packages = [
@@ -18,7 +21,7 @@
       # "vscodevim.vim"
     ];
     workspace = {
-      # Runs when a workspace is first created with this `dev.nix` file
+      # Runs when a workspace is first created with this `shell.nix` file
       onCreate = {
         npm-install = "npm ci --no-audit --prefer-offline --no-progress --timing";
         # Open editors for the following files by default, if they exist:

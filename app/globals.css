@@ -1,17 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Inter:wght@100..900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 * {
- 
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
 :root {
-  --ascolor:#F5F0F0;
-  --ascent: #8A6163;
-  --button: #ED2933;
+  --ascolor: #f5f0f0;
+  --ascent: #8a6163;
+  --button: #ed2933;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -51,7 +49,7 @@
   --color-foreground: var(--foreground);
   --color-ascent: var(--ascent);
   --color-button: var(--button);
-  --color-up: var(--bg-up);
+  --color-up: var(--ascolor);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -89,13 +87,13 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-h1{
-  font-family: "Bruno Ace", sans-serif;
-color: var(--foreground);
+h1 {
+  font-family: var(--font-bruno-ace), sans-serif;
+  color: var(--foreground);
 }
- 
-.typography{
-  font-family: "Bruno Ace", sans-serif;
+
+.typography {
+  font-family: var(--font-bruno-ace), sans-serif;
 }
 .dark {
   --background: oklch(0.141 0.005 285.823);
@@ -138,7 +136,7 @@ color: var(--foreground);
   body {
     @apply bg-background text-foreground;
   }
-  .container{
+  .container {
     @apply relative w-full max-w-7xl mx-auto p-8;
   }
 }
