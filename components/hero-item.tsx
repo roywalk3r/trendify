@@ -78,7 +78,7 @@ export default function HeroItem({ image, title, text, cta, position }: HeroItem
                     whileTap={{ scale: 0.95 }}
                 >
 
-                    <Button  variant={"ghost"} className="group glass bg-white px-6 py-3 rounded-full text-ascent font-semibold w-fit typography text-lg  hover:bg-up/20 hover:text-ascent hover:shadow-lg hover:border-ascent transition-all duration-300">
+                    <Button  variant={"ghost"} className="group glass bg-white px-6 py-3 rounded-full text-ascent font-semibold w-fit typography text-lg  hover:bg-up/20 hover:text-white hover:shadow-lg hover:border-ascent transition-all duration-300">
                         <span className="mr-2">{cta}</span>
                         <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                             <ArrowRight className="w-5 h-5" />

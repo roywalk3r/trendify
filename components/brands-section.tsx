@@ -5,12 +5,12 @@ import Image from "next/image"
 
 export default function BrandsSection() {
     const brands = [
-        { name: "Nike", logo: "/images/logo.svg" },
-        { name: "Adidas", logo: "/images/logo.svg" },
-        { name: "Zara", logo: "/images/logo.svg" },
-        { name: "H&M", logo: "/images/logo.svg" },
-        { name: "Uniqlo", logo: "/images/logo.svg" },
-        { name: "Gucci", logo: "/images/logo.svg" },
+        { name: "Nike", logo: "/images/Nike.svg" },
+        { name: "Adidas", logo: "/images/Adidas.svg" },
+        { name: "Zara", logo: "/images/Zara.svg" },
+        { name: "H&M", logo: "/images/hm.svg" },
+        { name: "Uniqlo", logo: "/images/UNIQLO.svg" },
+        { name: "Gucci", logo: "/images/Gucci.svg" },
     ]
 
     const containerVariants: Variants = {

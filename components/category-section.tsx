@@ -5,14 +5,14 @@ import type { Variants } from "framer-motion"
 
 export default function Category() {
     const categories = [
-        { image: "/images/hero2.jpg", title: "Men's Fashion" },
+        { image: "/images/men.jpg", title: "Men's Fashion" },
         { image: "/images/hero3.jpg", title: "Women's Fashion" },
-        { image: "/images/heroImg1.png", title: "Kids & Baby" },
-        { image: "/images/hero2.jpg", title: "Accessories" },
-        { image: "/images/hero3.jpg", title: "Shoes" },
-        { image: "/images/heroImg1.png", title: "Bags" },
-        { image: "/images/hero2.jpg", title: "Jewelry" },
-        { image: "/images/hero3.jpg", title: "Sports" },
+        { image: "/images/kids.jpg", title: "Kids & Baby" },
+        { image: "/images/accessories.jpg", title: "Accessories" },
+        { image: "/images/shoes.jpg", title: "Shoes" },
+        { image: "/images/bags.jpg", title: "Bags" },
+        { image: "/images/jewel.jpg", title: "Jewelry" },
+        { image: "/images/sports.jpg", title: "Sports" },
     ]
 
     const containerVariants: Variants = {
