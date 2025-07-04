@@ -1,8 +1,8 @@
-import men from "../assets/product_7.png";
-import women from "../assets/product_18.png";
-import kids from "../assets/product_27.png";
-import electronics from "../assets/product_38.png";
-import cosmetics from "../assets/product_50.png";
+import men from "./product_7.png";
+import women from "./product_18.png";
+import kids from "./product_27.png";
+import electronics from "./product_38.png";
+import cosmetics from "./product_50.png";
 
 import product_1 from "./product_1.png";
 import product_2 from "./product_2.png";
@@ -94,7 +94,10 @@ export const all_products = [
     id: "1",
     name: "Elegant Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     image: product_1,
+    
     price: 120.00,
+    rating: 4.5,
+    reviews: 10,
     description:
       "Elevate your style with our elegant and chic blouse, featuring flutter sleeves and a peplum hem.",
     category: "Men",
@@ -104,6 +107,8 @@ export const all_products = [
     name: "Stylish Floral Print Summer Dress with Belt and V Neck Design",
     image: product_2,
     price: 180.00,
+    rating: 4.5,
+    reviews: 5,
     description:
       "Step into summer with our Floral Print Summer Dress, tailored for comfort and sophistication.",
     category: "Men",
@@ -113,6 +118,8 @@ export const all_products = [
     name: "Sophisticated Double Breasted Longline Blazer",
     image: product_3,
     price: 160.00,
+    rating: 4.5,
+    reviews: 7,
     description:
       "Embrace elegance and versatility with our Women's Blazer, perfect for day to night transitions.",
     category: "Men",
@@ -122,6 +129,8 @@ export const all_products = [
     name: "Classic Double Breasted Belted Trench Coat",
     image: product_4,
     price: 200.00,
+    rating: 4.5,
+    reviews: 12,
     description:
       "Stay stylishly warm with our Trench Coat, designed to complement your sophisticated urban look.",
     category: "Men",
@@ -131,6 +140,8 @@ export const all_products = [
     name: "Fashionable High Waist A Line Midi Skirt with Button Detail",
     image: product_5,
     price: 250.00,
+    rating: 4.5,
+    reviews: 8,
     description:
       "Add flair to your wardrobe with our Skirt, crafted for the modern woman who loves contemporary fashion.",
     category: "Men",
@@ -140,6 +151,8 @@ export const all_products = [
     name: "Chic Handbag with Gold Hardware and Removable Strap",
     image: product_6,
     price: 140.00,
+    rating: 4.5,
+    reviews: 9,
     description:
       "Complete your look with our Handbag, designed to be both stylish and functional for everyday use.",
     category: "Men",
@@ -149,6 +162,8 @@ export const all_products = [
     name: "Elegant Pointed Toe Stiletto Heels with Ankle Strap",
     image: product_7,
     price: 180.00,
+    rating: 4.5,
+    reviews: 11,
     description:
       "Step out in confidence with our Heels, crafted for comfort and style to elevate your every step.",
     category: "Men",
@@ -158,6 +173,8 @@ export const all_products = [
     name: "Stylish Hooded Winter Coat with Faux Fur Trim",
     image: product_8,
     price: 150.00,
+    rating: 4.5,
+    reviews: 15,
     description:
       "Stay warm and stylish with our Winter Coat, crafted for the modern woman who values both fashion and function.",
     category: "Men",
@@ -167,6 +184,8 @@ export const all_products = [
     name: "Chic Wide Leg Jumpsuit with Sleeveless Design",
     image: product_9,
     price: 280.00,
+    rating: 4.5,
+    reviews: 12,
     description:
       "Make a statement with our Jumpsuit, perfect for the confident woman who loves contemporary fashion.",
     category: "Men",
@@ -176,8 +195,10 @@ export const all_products = [
     name: "Fashionable Silk Scarf with Floral Print",
     image: product_10,
     price: 180.00,
+    rating: 4.5,
+    reviews: 14,
     description:
-      "Complete your look with our Women's Scarf, designed to add a touch of elegance to any outfit.",
+      "Complete your look with our Scarf, designed to add a touch of elegance to any outfit.",
     category: "Men",
   },
   {
@@ -185,8 +206,10 @@ export const all_products = [
     name: "Elegant Pointed Toe Pumps with Kitten Heel",
     image: product_11,
     price: 80.00,
+    rating: 4.5,
+    reviews: 10,
     description:
-      "Step out in style with our Women's Pumps, crafted for both comfort and sophistication.",
+      "Step out in style with our Pumps, crafted for both comfort and sophistication.",
     category: "Men",
   },
   {
@@ -194,8 +217,10 @@ export const all_products = [
     name: "Classic Fit Two Button Wool Blend Suit",
     image: product_12,
     price: 240.00,
+    rating: 4.5,
+    reviews: 16,
     description:
-      "Make a statement of bold elegance with our Women's Suit, perfect for those who appreciate fashion that speaks volumes.",
+      "Make a statement of bold elegance with our Suit, perfect for those who appreciate fashion that speaks volumes.",
     category: "Men",
   },
 
@@ -205,8 +230,10 @@ export const all_products = [
     name: "Green Solid Zippered Full Zip Slim Fit Bomber Jacket",
     image: product_13,
     price: 180.00,
+    rating: 4.5,
+    reviews: 10,
     description:
-      "Discover the perfect blend of comfort and style with our Men's Jacket, designed for the contemporary man.",
+      "Discover the perfect blend of comfort and style with our Bomber Jacket, designed for the contemporary woman.",
     category: "Women",
   },
   {
@@ -214,8 +241,10 @@ export const all_products = [
     name: "Casual Denim Shirt with Button Down Front and Chest Pockets",
     image: product_14,
     price: 160.00,
+    rating: 4.5,
+    reviews: 8,
     description:
-      "Embrace casual charm with our Denim Shirt, tailored for the modern man who values comfort and style.",
+      "Embrace casual charm with our Denim Shirt, tailored for the modern woman who values comfort and style.",
     category: "Women",
   },
   {
@@ -223,417 +252,72 @@ export const all_products = [
     name: "Classic Polo Shirt with Contrast Collar and Cuffs",
     image: product_15,
     price: 120.00,
-    description:
-      "Add a timeless touch to your wardrobe with our Men's Polo Shirt, crafted for style and comfort.",
-    category: "Women",
   },
   {
     id: "16",
-    name: "Casual Hooded Jacket with Front Pockets and Drawstring",
+    name: "Chic Handbag with Gold Hardware and Removable Strap",
     image: product_16,
-    price: 200.00,
+    price: 140.00,
+    rating: 4.5,
+    reviews: 9,
     description:
-      "Stay cozy and stylish with our Hooded Jacket, designed for casual comfort without compromising on style.",
+      "Complete your look with our Handbag, designed to be both stylish and functional for everyday use.",
     category: "Women",
   },
   {
     id: "17",
-    name: "Dapper Formal Shirt with Spread Collar and French Cuffs",
+    name: "Elegant Pointed Toe Stiletto Heels with Ankle Strap",
     image: product_17,
-    price: 140.00,
+    price: 180.00,
+    rating: 4.5,
+    reviews: 11,
     description:
-      "Step into sophistication with our Formal Shirt, crafted for the gentleman who appreciates classic style.",
+      "Step out in confidence with our Heels, crafted for comfort and style to elevate your every step.",
     category: "Women",
   },
   {
     id: "18",
-    name: "Casual Slim Fit Chino Pants with Stretch Fabric",
+    name: "Stylish Hooded Winter Coat with Faux Fur Trim",
     image: product_18,
-    price: 160.00,
+    price: 150.00,
+    rating: 4.5,
+    reviews: 15,
     description:
-      "Stay comfortably stylish with our Casual Chinos, perfect for a relaxed yet polished look.",
+      "Stay warm and stylish with our Winter Coat, crafted for the modern woman who values both fashion and function.",
     category: "Women",
   },
-  {
-    id: "19",
-    name: "Stylish Leather Belt with Automatic Buckle",
-    image: product_19,
-    price: 60.00,
-    description:
-      "Add a refined touch to your attire with our Leather Belt, crafted for both style and durability.",
-    category: "Women",
-  },
+
   {
     id: "20",
-    name: "Cool Graphic Tee with Crew Neck and Short Sleeves",
+    name: "Fashionable Silk Scarf with Floral Print",
     image: product_20,
-    price: 80.00,
+    price: 180.00,
+    rating: 4.5,
+    reviews: 14,
     description:
-      "Express yourself with our Graphic Tee, perfect for the modern man who loves casual cool.",
+      "Complete your look with our Scarf, designed to add a touch of elegance to any outfit.",
     category: "Women",
   },
   {
     id: "21",
-    name: "Stylish Lace Up Sneakers with Breathable Mesh Upper",
+    name: "Elegant Pointed Toe Pumps with Kitten Heel",
     image: product_21,
-    price: 120.00,
+    price: 80.00,
+    rating: 4.5,
+    reviews: 10,
     description:
-      "Stay on trend with our Men's Sneakers, designed for both comfort and style.",
+      "Step out in style with our Pumps, crafted for both comfort and sophistication.",
     category: "Women",
   },
   {
     id: "22",
-    name: "Classic Button Down Cardigan with Ribbed Cuffs and Hem",
+    name: "Classic Fit Two Button Wool Blend Suit",
     image: product_22,
-    price: 120.00,
+    price: 240.00,
+    rating: 4.5,
+    reviews: 16,
     description:
-      "Stay warm and stylish with our Men's Cardigan, designed for timeless elegance.",
+      "Make a statement of bold elegance with our Suit, perfect for those who appreciate fashion that speaks volumes.",
     category: "Women",
-  },
-  {
-    id: "23",
-    name: "Cool Cargo Pants with Multiple Pockets and Relaxed Fit",
-    image: product_23,
-    price: 140.00,
-    description:
-      "Add versatility to your wardrobe with our Cargo Pants, perfect for a rugged yet stylish look.",
-    category: "Women",
-  },
-  {
-    id: "24",
-    name: "Cool Denim Outfit with Jacket and Jeans",
-    image: product_24,
-    price: 140.00,
-    description:
-      "Stay cool and trendy with our Kids' Denim Outfit, crafted for the young fashionista.",
-    category: "Women",
-  },
-
-  // Kids' Products
-  {
-    id: "25",
-    name: "Sporty Youth Track Suit with Zip Up Jacket and Jogger Pants",
-    image: product_25,
-    price: 220.00,
-    description:
-      "Embrace active living with our Youth Track Suit, designed to keep your child comfortable and stylish.",
-    category: "Kids",
-  },
-  {
-    id: "26",
-    name: "Casual Teen's Hoodie with Kangaroo Pocket and Ribbed Cuffs",
-    image: product_26,
-    price: 100.00,
-    description:
-      "Discover laid back charm with our Teen's Hoodie, perfect for casual everyday wear.",
-    category: "Kids",
-  },
-  {
-    id: "27",
-    name: "Adorable Toddler Dress with Ruffle Sleeves and Bow Detail",
-    image: product_27,
-    price: 120.00,
-    description:
-      "Let your little one shine with our Toddler Dress, designed to bring joy and comfort to every occasion.",
-    category: "Kids",
-  },
-  {
-    id: "28",
-    name: "Playful Kid's T Shirt with Fun Prints and Soft Cotton Fabric",
-    image: product_28,
-    price: 180.00,
-    description:
-      "Encourage creativity and fun with our Kid's T Shirt, perfect for active play and everyday adventures.",
-    category: "Kids",
-  },
-  {
-    id: "29",
-    name: "Colorful Kids' Raincoat with Animal Design",
-    image: product_29,
-    price: 75.00,
-    description:
-      "Brighten rainy days with our Kids' Raincoat, featuring a playful animal design and waterproof fabric.",
-    category: "Kids",
-  },
-  {
-    id: "30",
-    name: "Adorable Baby Bib Set with Cute Patterns",
-    image: product_30,
-    price: 30.00,
-    description:
-      "Make feeding time fun with our Baby Bib Set, crafted for comfort and easy cleaning.",
-    category: "Kids",
-  },
-  {
-    id: "31",
-    name: "Comfortable Kids' Slip On Sneakers with Elastic Laces",
-    image: product_31,
-    price: 55.00,
-    description:
-      "Let them run and play in our Slip On Sneakers, designed for comfort and convenience.",
-    category: "Kids",
-  },
-  {
-    id: "32",
-    name: "Soft Baby Blanket with Cute Animal Embroidery",
-    image: product_32,
-    price: 40.00,
-    description:
-      "Wrap your baby in warmth with our Soft Baby Blanket, featuring adorable animal embroidery.",
-    category: "Kids",
-  },
-  {
-    id: "33",
-    name: "Playful Kids' Swim Trunks with Colorful Print",
-    image: product_33,
-    price: 35.00,
-    description:
-      "Make a splash with our Kids' Swim Trunks, perfect for pool days and beach adventures.",
-    category: "Kids",
-  },
-  {
-    id: "34",
-    name: "Cozy Kids' Fleece Pajama Set with Cartoon Characters",
-    image: product_34,
-    price: 45.00,
-    description:
-      "Ensure a good night's sleep with our Fleece Pajama Set, featuring their favorite cartoon characters.",
-    category: "Kids",
-  },
-  {
-    id: "35",
-    name: "Colorful Kids' Backpack with Adjustable Shoulder Straps",
-    image: product_35,
-    price: 50.00,
-    description:
-      "Let them carry their school essentials in style with our Colorful Backpack, designed for comfort and durability.",
-    category: "Kids",
-  },
-  {
-    id: "36",
-    name: "Stylish Kids' Denim Shorts with Embroidered Details",
-    image: product_36,
-    price: 40.00,
-    description:
-      "Add a touch of charm to their summer wardrobe with our Denim Shorts, featuring cute embroidered details.",
-    category: "Kids",
-  },
-
-  // Unisex Products
-  {
-    id: "37",
-    name: "Versatile Unisex Canvas Backpack with Laptop Compartment",
-    image: product_37,
-    price: 65.00,
-    description:
-      "Stay organized on the go with our Canvas Backpack, suitable for work, school, or travel.",
-    category: "Electronics",
-  },
-  {
-    id: "38",
-    name: "Classic Unisex Crewneck Sweatshirt with Minimalist Design",
-    image: product_38,
-    price: 55.00,
-    description:
-      "Add a cozy layer to your wardrobe with our Crewneck Sweatshirt, perfect for any casual outing.",
-    category: "Electronics",
-  },
-  {
-    id: "39",
-    name: "Comfortable Unisex Jogger Pants with Drawstring Waist",
-    image: product_39,
-    price: 50.00,
-    description:
-      "Enjoy relaxed comfort with our Jogger Pants, featuring a drawstring waist and soft fabric.",
-    category: "Electronics",
-  },
-  {
-    id: "40",
-    name: "Stylish Unisex Aviator Sunglasses with UV Protection",
-    image: product_40,
-    price: 30.00,
-    description:
-      "Protect your eyes in style with our Aviator Sunglasses, designed for both fashion and function.",
-    category: "Electronics",
-  },
-  {
-    id: "41",
-    name: "Casual Unisex Denim Jacket with Button Up Front",
-    image: product_41,
-    price: 80.00,
-    description:
-      "Add a timeless piece to your wardrobe with our Denim Jacket, perfect for layering year round.",
-    category: "Electronics",
-  },
-  {
-    id: "42",
-    name: "Versatile Unisex Messenger Bag with Adjustable Strap",
-    image: product_42,
-    price: 60.00,
-    description:
-      "Stay organized and stylish with our Messenger Bag, ideal for daily commuting or travel.",
-    category: "Electronics",
-  },
-  {
-    id: "43",
-    name: "Classic Unisex Wool Fedora Hat with Grosgrain Band",
-    image: product_43,
-    price: 45.00,
-    description:
-      "Complete your look with our Wool Fedora Hat, featuring a timeless design for any occasion.",
-    category: "Electronics",
-  },
-  {
-    id: "44",
-    name: "Comfortable Unisex Cotton T Shirt with Crew Neck",
-    image: product_44,
-    price: 25.00,
-    description:
-      "Update your basics with our Cotton T Shirt, crafted for comfort and everyday wear.",
-    category: "Electronics",
-  },
-  {
-    id: "45",
-    name: "Elegant Unisex Stainless Steel Watch with Leather Strap",
-    image: product_45,
-    price: 120.00,
-    description:
-      "Stay punctual and stylish with our Stainless Steel Watch, featuring a sleek design for any occasion.",
-    category: "Electronics",
-  },
-  {
-    id: "46",
-    name: "Casual Unisex Baseball Cap with Embroidered Logo",
-    image: product_46,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Electronics",
-  },
-  {
-    id: "47",
-    name: "Casual Unisex Baseball Cap with Embroidered Logo",
-    image: product_47,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Electronics",
-  },
-  {
-    id: "48",
-    name: "Ultra HD 4K Smart LED TV",
-    image: product_48,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Electronics",
-  },
-  {
-    id: "49",
-    name: "Long-Lasting Matte Liquid Lipstick",
-    image: product_49,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Cosmetics",
-  },
-  {
-    id: "50",
-    name: "Hydrating Facial Moisturizer with SPF",
-    image: product_50,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Cosmetics",
-  },
-  {
-    id: "51",
-    name: "All-in-One BB Cream with SPF",
-    image: product_51,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Cosmetics",
-  },
-  {
-    id: "52",
-    name: "Nourishing Argan Oil Hair Serum",
-    image: product_52,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Cosmetics",
-  },
-  {
-    id: "53",
-    name: "Mineral-Based Pressed Powder Foundation",
-    image: product_53,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Cosmetics",
-  },
-  {
-    id: "54",
-    name: "Creamy Concealer Stick with Full Coverage",
-    image: product_54,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Cosmetics",
-  },
-  {
-    id: "55",
-    name: "Matte Finish Setting Spray",
-    image: product_55,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Cosmetics",
-  },
-  {
-    id: "56",
-    name: "Hydrating Lip Balm with Shea Butter",
-    image: product_56,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Cosmetics",
-  },
-  {
-    id: "57",
-    name: "Smoky Eye Shadow Palette",
-    image: product_57,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Cosmetics",
-  },
-  {
-    id: "58",
-    name: "Anti-Aging Retinol Cream",
-    image: product_58,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Cosmetics",
-  },
-  {
-    id: "59",
-    name: "Lightweight Tinted Moisturizer",
-    image: product_59,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Cosmetics",
-  },
-  {
-    id: "60",
-    name: "Ultra-Fine Liquid Eyeliner",
-    image: product_60,
-    price: 20.00,
-    description:
-      "Top off your casual look with our Baseball Cap, featuring an embroidered logo and adjustable fit.",
-    category: "Cosmetics",
   },
 ];

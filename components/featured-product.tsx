@@ -4,6 +4,7 @@ import type { Variants } from "framer-motion"
 import ProductCard from "./product-card"
 import { Button } from "./ui/button"
 import { ArrowRight } from "lucide-react"
+import {all_products} from "@/public/images/data";
 
 export default function FeaturedProducts() {
     const featuredProducts = [
@@ -162,9 +163,11 @@ export default function FeaturedProducts() {
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12"
                 variants={containerVariants}
             >
-                {featuredProducts.map((product, index) => (
-                    <ProductCard key={product.id} {...product} index={index} />
-                ))}
+                {Array.from({ length: 8 })
+                    .map((_, index) => all_products[Math.floor(Math.random() * all_products.length)])
+                    .map((product, index) => (
+                        <ProductCard key={index} {...product} index={index} />
+                    ))}
             </motion.div>
 
             {/* View All Button */}

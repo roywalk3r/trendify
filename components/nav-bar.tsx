@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { HeartIcon, SearchIcon, ShoppingBag, Menu, X, UserIcon, LockKeyhole } from "lucide-react"
 import { SignedOut, SignInButton, useAuth } from "@clerk/nextjs"
 import { Button } from "./ui/button"
+import Link from "next/link";
 
 export default function NavBar() {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -103,6 +104,8 @@ export default function NavBar() {
             variants={navVariants}
         >
             {/* Logo */}
+            <Link   href={"/"} >
+
             <motion.div className="flex gap-2 items-center" variants={itemVariants}>
                 <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}>
                     <Image src={"/images/logo.svg"} className={"dark:invert"} width={24} height={24} alt={"Logo"} />
@@ -115,6 +118,7 @@ export default function NavBar() {
                     Trendify
                 </motion.h1>
             </motion.div>
+            </Link>
 
             {/* Desktop Navigation */}
             <motion.nav className={"hidden lg:flex gap-6 items-center"} variants={itemVariants}>

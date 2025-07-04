@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import type { Variants } from "framer-motion"
-import Image from "next/image"
+import Image, {StaticImageData} from "next/image"
 import { Heart, ShoppingCart, Star, Eye } from "lucide-react"
 import { Button } from "./ui/button"
 
@@ -11,7 +11,7 @@ interface ProductCardProps {
     name: string
     price: number
     originalPrice?: number
-    image: string
+    image: string | StaticImageData
     rating: number
     reviews: number
     isNew?: boolean
