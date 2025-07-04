@@ -68,7 +68,7 @@ export default function ProductCard({
 
     return (
         <motion.div
-            className="group relative bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+            className="group relative bg-card rounded-2xl border border-muted border-ascent overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
@@ -156,7 +156,7 @@ export default function ProductCard({
             {/* Product Info */}
             <div className="p-4">
                 <motion.h3
-                    className="font-semibold text-lg mb-2 line-clamp-2"
+                    className="font-semibold typography text-sm text-ascent mb-2 line-clamp-2"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: index * 0.1 + 0.3 }}
@@ -189,7 +189,7 @@ export default function ProductCard({
                     animate={{ opacity: 1 }}
                     transition={{ delay: index * 0.1 + 0.5 }}
                 >
-                    <span className="text-xl font-bold text-foreground">${price}</span>
+                    <span className="text-xl text-foreground typography">${price}</span>
                     {originalPrice && <span className="text-sm text-muted-foreground line-through">${originalPrice}</span>}
                 </motion.div>
 
@@ -199,13 +199,16 @@ export default function ProductCard({
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 + 0.6 }}
                 >
-                    <motion.button
-                        className="w-full bg-ascent hover:bg-ascent/90 text-white font-semibold py-2 rounded-full"
+                    <motion.div
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
+                        transition={{ duration: 0.5 }}
                     >
+                        <Button variant={"ghost"} className="w-full bg-ascent-foreground hover:bg-ascent hover:text-white transition ease-in-out delay-250 duration-300 text-ascent font-semibold py-2 rounded-full
+                         motion-reduce:transition-none ">
                         Add to Cart
-                    </motion.button>
+                        </Button>
+                    </motion.div>
                 </motion.div>
             </div>
         </motion.div>

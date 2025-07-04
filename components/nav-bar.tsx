@@ -4,12 +4,15 @@ import { motion, AnimatePresence } from "framer-motion"
 import type { Variants } from "framer-motion"
 import Image from "next/image"
 import { Input } from "@/components/ui/input"
-import { HeartIcon, SearchIcon, ShoppingBag, Menu, X } from "lucide-react"
+import { HeartIcon, SearchIcon, ShoppingBag, Menu, X, UserIcon, LockKeyhole } from "lucide-react"
+import { SignedOut, SignInButton, useAuth } from "@clerk/nextjs"
+import { Button } from "./ui/button"
 
 export default function NavBar() {
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [isSearchOpen, setIsSearchOpen] = useState(false)
+    const { isLoaded, isSignedIn, userId, sessionId, getToken } = useAuth()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -81,7 +84,7 @@ export default function NavBar() {
     }
 
     const navItems = [
-        { name: "New Arrivals", href: "#" },
+        { name: "New Arrivals", href: "/new-arrivals" },
         { name: "Men", href: "#" },
         { name: "Women", href: "#" },
         { name: "Accessories", href: "#" },
@@ -189,13 +192,25 @@ export default function NavBar() {
                         <ShoppingBag className={"text-[#8A6163] w-5 h-5"} />
                     </motion.button>
                     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="cursor-pointer">
+                  {isSignedIn ? (
                         <Image
-                            src={"/images/avatar.png"}
-                            className={"dark:invert rounded-full"}
+                            src="/images/avatar.png"
+                            className="dark:invert rounded-full"
                             width={32}
                             height={32}
-                            alt={"Avatar"}
+                            alt="Avatar"
                         />
+                        ) : (
+                            <SignedOut>
+                            <SignInButton mode="modal">
+                                <Button variant={"outline"} className="bg-ascent text-ascent-foreground">
+                                Sign in
+                                <LockKeyhole className="w-5 h-5" />
+                                </Button>
+                                </SignInButton>
+                          </SignedOut>
+                        )}
+
                     </motion.div>
                 </motion.div>
             </motion.div>

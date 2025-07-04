@@ -8,8 +8,8 @@ import BrandsSection from "@/components/brands-section";
 export default function Home(){
     return (
         <>
-        <Hero/>
-        <Category/>
+          <Hero/>
+            <Category/>
             <FeaturedProducts />
             <TestimonialsSection />
             <BrandsSection />

@@ -5,6 +5,7 @@ import { Inter, Bruno_Ace } from "next/font/google"
 import NavBar from "@/components/nav-bar"
 import "./globals.css"
 import Footer from "@/components/footer";
+import { ClerkProvider } from "@clerk/nextjs"
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -40,6 +41,7 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
+        <ClerkProvider>
         <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${bruno.variable} antialiased`}>
         <NavBar />
@@ -47,5 +49,6 @@ export default function RootLayout({
         <Footer />
         </body>
         </html>
+        </ClerkProvider>
     )
 }

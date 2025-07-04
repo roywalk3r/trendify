@@ -49,7 +49,7 @@
   --color-foreground: var(--foreground);
   --color-ascent: var(--ascent);
   --color-button: var(--button);
-  --color-up: var(--ascolor);
+  --color-ascent-foreground: var(--ascolor);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -94,6 +94,9 @@ h1 {
 
 .typography {
   font-family: var(--font-bruno-ace), sans-serif;
+}
+.cl-internal-y44tp9{
+  display: none !important;
 }
 .dark {
   --background: oklch(0.141 0.005 285.823);

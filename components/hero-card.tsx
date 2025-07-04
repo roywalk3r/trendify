@@ -10,9 +10,10 @@ interface HeroItems {
     text: string
     cta: string
     position?: string
+    style?: string
 }
 
-export default function HeroItem({ image, title, text, cta, position }: HeroItems) {
+export default function HeroCard({ image, title, text, cta, position, style }: HeroItems) {
     return (
         <div
             className={`relative w-full h-[600px] ${position ? position : "items-center"} rounded-3xl flex flex-col justify-end p-12 bg-cover bg-center overflow-hidden`}
@@ -31,7 +32,7 @@ export default function HeroItem({ image, title, text, cta, position }: HeroItem
                     ease: "easeInOut",
                 }}
             >
-                <Sparkles className="w-6 h-6 text-white/60" />
+                <Sparkles className="w-10 h-10 text-white/60" />
             </motion.div>
 
             <motion.div
@@ -62,7 +63,7 @@ export default function HeroItem({ image, title, text, cta, position }: HeroItem
                 </motion.h2>
 
                 <motion.p
-                    className="text-white/90 text-lg md:text-xl mb-8 leading-relaxed"
+                    className={`text-white/90 text-lg md:text-xl mb-8 ${style ? style : ""} leading-relaxed`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
