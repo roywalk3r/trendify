@@ -160,6 +160,7 @@ export default function ProductCard({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: index * 0.1 + 0.3 }}
+                    key={name}
                 >
                     {name}
                 </motion.h3>

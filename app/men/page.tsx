@@ -13,7 +13,7 @@ export default function MenPage() {
                 <HeroCard
                     title={"Men's Collection"}
                     image="/images/men.jpg"
-                    position="items-center"
+                    position="items-left"
                     cta="Shop Now"
                     text="Discover our premium collection of men's fashion. From casual wear to formal attire, find everything you need to elevate your style."
                     style="italic typography"
@@ -32,7 +32,7 @@ export default function MenPage() {
                         {menProducts.map((product, index) => (
                             <div
                                 key={product.id}
-                                className="group relative bg-card rounded-2xl border border-muted border-ascent overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+                                className="group relative bg-card rounded-2xl border border-muted  overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
                             >
                                 <div className="relative aspect-square overflow-hidden bg-gray-50">
                                     <Image
