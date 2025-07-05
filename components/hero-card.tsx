@@ -48,7 +48,7 @@ export default function HeroCard({ image, title, text, cta, position, style }: H
                     delay: 2,
                 }}
             >
-                <Sparkles className="w-4 h-4 text-white/40" />
+                <Sparkles className="w-12 h-12 text-white/40" />
             </motion.div>
 
             {/* Content */}

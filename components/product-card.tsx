@@ -16,7 +16,7 @@ interface ProductCardProps {
     reviews: number
     isNew?: boolean
     isSale?: boolean
-    index?: number
+    index: number
 }
 
 export default function ProductCard({
@@ -68,7 +68,7 @@ export default function ProductCard({
 
     return (
         <motion.div
-            className="group relative bg-card rounded-2xl border border-muted border-ascent overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+            className="group relative bg-card rounded-2xl border border-muted overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
@@ -160,7 +160,7 @@ export default function ProductCard({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: index * 0.1 + 0.3 }}
-                    key={name}
+                    key={index}
                 >
                     {name}
                 </motion.h3>

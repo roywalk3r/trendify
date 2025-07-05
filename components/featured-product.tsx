@@ -165,8 +165,20 @@ export default function FeaturedProducts() {
             >
                 {Array.from({ length: 8 })
                     .map((_, index) => all_products[Math.floor(Math.random() * all_products.length)])
+                    .map((product: any) => ({
+                        ...product,
+                        rating: product.rating || 0,  // Default to 0 if not provided
+                        reviews: product.reviews || 0, // Default to 0 if not provided
+                        originalPrice: product.originalPrice || product.price, // Use price as originalPrice if not provided
+                        isNew: product.isNew || false,
+                        isSale: product.isSale || false
+                    }))
                     .map((product, index) => (
-                        <ProductCard key={index} {...product} index={index} />
+                        <ProductCard 
+                            key={`${product.id}-${index}`}
+                            {...product}
+                            index={index}
+                        />
                     ))}
             </motion.div>
 

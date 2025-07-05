@@ -9,8 +9,15 @@ export default function NewArrivalProduct(){
             {/* Map over products */}
           {Array.from({ length: 9 })
             .map((_, index) => all_products[Math.floor(Math.random() * all_products.length)])
+            .map((product, index) => ({
+              ...product,
+              rating: product.rating || 0,  // Default to 0 if rating is missing
+              reviews: product.reviews || 0, // Default to 0 if reviews is missing
+              price: product.price || 0,     // Ensure price is a number
+              index
+            }))
             .map((product, index) => (
-              <ProductCard key={index} {...product} index={index} />
+              <ProductCard key={index} {...product} />
             ))}
         </div>
         </>
