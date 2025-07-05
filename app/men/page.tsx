@@ -36,6 +36,8 @@ export default function MenPage() {
                             >
                                 <div className="relative aspect-square overflow-hidden bg-gray-50">
                                     <Image
+                                        width={500}
+                                        height={500}
                                         src={product.image || "/placeholder.svg"}
                                         alt={product.name}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

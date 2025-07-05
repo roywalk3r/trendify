@@ -13,7 +13,7 @@ export default function WomenPage() {
                 <HeroCard
                     title={"Women's Collection"}
                     image="/images/hero3.jpg"
-                    position="items-center"
+                    position="items-left"
                     cta="Explore Now"
                     text="Embrace your femininity with our curated collection of women's fashion. From elegant dresses to casual chic, discover pieces that celebrate your unique style."
                     style="italic typography"
@@ -36,6 +36,8 @@ export default function WomenPage() {
                             >
                                 <div className="relative aspect-square overflow-hidden bg-gray-50">
                                     <Image
+                                        width={500}
+                                        height={500}
                                         src={product.image || "/placeholder.svg"}
                                         alt={product.name}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

@@ -18,7 +18,7 @@ export default function SalePage() {
                 <HeroCard
                     title={"Sale Collection"}
                     image="/images/banner.png"
-                    position="items-center"
+                    position="items-left"
                     cta="Shop Sale"
                     text="Don't miss out on incredible savings! Discover amazing deals on your favorite fashion pieces with discounts up to 70% off. Limited time only!"
                     style="italic typography"
@@ -40,10 +40,12 @@ export default function SalePage() {
                         {saleProducts.map((product, index) => (
                             <div
                                 key={product.id}
-                                className="group relative bg-card rounded-2xl border border-muted border-ascent overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+                                className="group relative bg-card rounded-2xl border border-muted overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
                             >
                                 <div className="relative aspect-square overflow-hidden bg-gray-50">
                                     <Image
+                                        width={500}
+                                        height={500}
                                         src={product.image || "/placeholder.svg"}
                                         alt={product.name}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

@@ -20,7 +20,7 @@ const getProduct = async (id: string) => {
       rating: 4.5,
       reviews: 128,
       description:
-        "Made from 100% organic cotton, this premium t-shirt offers unmatched comfort and style. Perfect for casual wear or layering.",
+          "Made from 100% organic cotton, this premium t-shirt offers unmatched comfort and style. Perfect for casual wear or layering.",
       features: ["100% Organic Cotton", "Pre-shrunk", "Machine Washable", "Sustainable Production"],
       sizes: ["XS", "S", "M", "L", "XL", "XXL"],
       colors: ["Black", "White", "Navy", "Gray"],
@@ -39,20 +39,21 @@ const getProduct = async (id: string) => {
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const product = await getProduct(params.id)
+  const { id } = await params
+  const product = await getProduct(id)
 
   if (!product) {
     notFound()
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container py-8">
-        <ProductDetail product={product} />
-        {/*<div className="mt-16">*/}
-        {/*  <RelatedProducts currentProductId={product.id} />*/}
-        {/*</div>*/}
+      <div className="min-h-screen bg-background">
+        <div className="container py-8">
+          <ProductDetail product={product} />
+          {/*<div className="mt-16">*/}
+          {/*  <RelatedProducts currentProductId={product.id} />*/}
+          {/*</div>*/}
+        </div>
       </div>
-    </div>
   )
 }
